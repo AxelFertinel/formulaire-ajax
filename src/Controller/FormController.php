@@ -19,6 +19,7 @@ class FormController extends AbstractController
     public function index()
     {
         $form = new FormManager();
+
         $data=[];
         $errors=[];
         $valid=[];
@@ -52,9 +53,9 @@ class FormController extends AbstractController
             }
             $valid[]= "votre message a été envoyé ";
 
-            $formulaire = $form->insert($data);
+            $form->insert($data);
         }
-        return $this->twig->render('Form/index.html.twig', ['data'=>$data,'errors'=>$errors, 'valid'=>$valid, 'formulaire'=>$formulaire]);
+        return $this->twig->render('Form/index.html.twig', ['data'=>$data,'errors'=>$errors, 'valid'=>$valid]);
     }
 
 

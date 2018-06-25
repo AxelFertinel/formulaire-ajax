@@ -34,9 +34,10 @@
 
     <script>
         $(document).ready(function () {
-// envoi mail avec js+ajax
             $(function () {
                 $('#envoyer').click(function () {
+                    var valid = true;
+
                     var data = {
                         Nom: $("#Nom").val(),
                         Prenom: $("#Prenom").val(),
@@ -51,15 +52,17 @@
                             success: function () {
                                 $('input').css('border-color', '#999');
                                 $('#messageSend').replaceWith('<div class="alert alert-success" role="alert">' + 'Message envoyé' + '</div>');
+                                valid = true;
                             }
                         });
                     } else {
                         $('input').css('border-color', 'red');
                         $('#messageSend').append('<div class="alert alert-warning" role="alert">' + 'veuillez remplir tous les champs' + '</div>');
+                        valid = false;
                     }
+                    return valid;
                 });
             });
-            // Wait for the DOM to be ready
         });
     </script>
 
