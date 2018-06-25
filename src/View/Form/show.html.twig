@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Affichage</h1>
+
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Phone</th>
+        </tr>
+        {% for formulaire in formulaires %}
+            <tr>
+                <td>{{ formulaire.Nom }}</td>
+                <td>{{ formulaire.Prenom }}</td>
+                <td>{{ formulaire.Adresse }}</td>
+                <td>{{ formulaire.Phone }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <style>
+        td,th{
+            border: 1px solid black;
+        }
+    </style>
+{% endblock %}
+
