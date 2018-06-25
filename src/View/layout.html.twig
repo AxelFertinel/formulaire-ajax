@@ -34,6 +34,7 @@
 
     <script>
         $(document).ready(function () {
+// envoi mail avec js+ajax
             $(function () {
                 $('#envoyer').click(function () {
                     var data = {
@@ -42,7 +43,6 @@
                         Adresse: $("#Adresse").val(),
                         Phone: $("#Phone").val()
                     };
-
                     if (!($("#Nom").val() === "") && !($("#Prenom").val() === "") && !($("#Adresse").val() === "") && !($("#Phone").val() === "")) {
                         $.ajax({
                             type: "POST",
@@ -59,9 +59,10 @@
                     }
                 });
             });
+            // Wait for the DOM to be ready
         });
     </script>
-   
+
 </body>
 {% block javascript %}{% endblock %}
 

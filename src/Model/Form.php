@@ -7,13 +7,15 @@ namespace Model;
  * Class Item
  * @package Model
  */
-class Formulaire
+class Form
 {
     private $id;
     private $Nom;
     private $Prenom;
     private $Adresse;
     private $Phone;
+
+
 
     /**
      * @return mixed
@@ -109,4 +111,5 @@ class Formulaire
 
         return $this;
     }
+
 }
